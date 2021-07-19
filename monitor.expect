@@ -1,0 +1,11 @@
+#!/usr/bin/expect
+ADDRESS="324:71e:281a:9ed3::ace"
+PORT="8888"
+
+spawn telnet $ADDRESS $PORT
+
+expect {
+        "'^]'." { exit 111 }
+}
+
+exit 222
